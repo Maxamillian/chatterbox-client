@@ -7,6 +7,8 @@
 
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script>
       // YOU DO NOT NEED TO EDIT THIS CODE
       if (!/(&|\?)username=/.test(window.location.search)) {
@@ -25,7 +27,13 @@
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+      <label>Rooms</label>
+      <select name="rooms">
+ <!--HAVE A FUNCTION THAT POPULATES DROP DOWN WITH OPTION TAGS-->
+        <option value='foobar'>Foobar</option>
+      </select>
+      <input type='text' name= 'messageInput'>
+      <input type='submit' name= 'messageInput' value='Submit!'>
     </div>
     <div id="chats"></div>
   </body>
