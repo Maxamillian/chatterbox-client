@@ -12,3 +12,7 @@ $.ajax({
 }).done(function() {
   $( this ).addClass( "done" );
 });
+
+
+
+//jQuery effectively escapes HTML elements when using .text(data)

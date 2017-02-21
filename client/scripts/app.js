@@ -1,49 +1,82 @@
-// YOUR CODE HE
-var runApp = function() {
-  //Allow for folks to select a username
-  //Allow for them to send messages
-  //display messages received from the server
-  //create rooms and enter existing rooms
-  //display messages sent by friends in bold
-  // debugger;
+// YOUR CODE HERE
+var app = {
+  server: 'http:/parse.hrr.hackreactor.com/chatterbox/classes/messages',
+  init: function() {},
 
+  send: function(message) {
+    //Should perform the ajax request for sending a message
+    $.ajax({
+      data: JSON.stringify(message),
+      dataType: 'json',
+      url: 'http:/parse.hrr.hackreactor.com/chatterbox/classes/messages',
+      type: 'POST'
+    });
+  },
 
-  //WHAT WE WANT THE HELPER FUNCTIONS TO DO:
-    //1.  PUT PROPER SECURITY PROTOCALLS IN PLACE
-    //2.  GENERATE DOM NODES
-    //3.  PUT DIFFERENT ROOMS IN CHAT BOX
-    //4.  PUT IN A TEXT BOX TO ENTER A MESSAGE IN (WITH A BUTTON)
-    //5.  EVENT HANDLER FUNCTION (FOR BUTTON) THAT PUSHES NEW MESSAGE INTO THE SERVER
-
-
-  // var app;
-  var getMessages = function(input) {
-    for (var i = 0; i < input.results.length; i++) {
-      console.log(input.results[i].text);
-    }
-  };
-
-//   $.ajax({
-//   url: "http://parse.hrr.hackreactor.com/chatterbox/classes/messages",
-//   context: document.body
-// }).done(function() {
-//   $( this ).addClass( "done" );
-// });
-
-  $.ajax({
-    url: 'http:/parse.hrr.hackreactor.com/chatterbox/classes/messages',
-    type: 'GET',
-    datatype: 'jsonp',
-    success: function(data) {
-      // app = data;
-      //console.log(data);
-      getMessages(data);
-    }
-  });
-
-  // return app;
-
-
+  fetch: function() {
+    //Should perform the ajax request for sending a message
+    // var info = $.parseJSON(
+    $.ajax({
+      // data: JSON.stringify(message),
+      // dataType: 'json',
+      url: 'http:/parse.hrr.hackreactor.com/chatterbox/classes/messages',
+      type: 'GET',
+      dataType: 'json'
+    });
+    // );
+  }
 };
 
-runApp();
+
+
+// var runApp = function() {
+
+//  $(document).ready(function(){
+
+  // var data = $.parseJSON($.ajax({
+  //   url:  'http:/parse.hrr.hackreactor.com/chatterbox/classes/messages',
+  //   dataType: "json",
+  //   async: false
+  // }).responseText);
+  //app = data;
+
+//   var makeNodes = function(){
+//     var res = app.results;
+//     for(var i = 0; i < res.length; i++){
+//        // console.log()
+//        // if()
+//       $('div').last().append('<p></p>');
+//       $('p').last().text(res[i].username);
+//       $('p').last().append('<br><span></span>');
+//       $('span').last().text(res[i].text);
+
+//     }
+//   };
+
+//   makeNodes();
+//   console.log(app.results[0].createdAt)
+//   });
+// };
+
+//   // runApp();
+
+// //WHEN MESSAGE IS ENTERED INTO THE TEXT FIELD AND SUBMIT IS PRESSED
+//   //CONSTRUCT AN OBJECT
+//   var Message = function(username, text, room) {
+//     this.username = username;
+//     this.text = text;
+//     this.roomname = room;
+//     this.createdAt = this.timestamp();
+//     this.objectId = this.createID();
+
+
+//   };
+//   Message.prototype.timestamp = function() {
+//     // body...
+//   };
+//   Message.prototype.createID = function() {
+//     // body...
+//   };
+
+  //TRIGGERS AN AJAX REQUEST (WITH ROOM NAME, USERNAME, TIME CREATED, ETC);
+  //STICK INTO OUR GLOBAL VARIABLE
