@@ -16,3 +16,8 @@ $.ajax({
 
 
 //jQuery effectively escapes HTML elements when using .text(data)
+
+
+// $(document).ready(function() {
+//   $('body').append('<p>Test</p>');
+// });
